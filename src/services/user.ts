@@ -1,4 +1,5 @@
 import { CONFIG_URL } from "enum/admin.enum";
+import { IDELETE } from "interfaces/Delete-User";
 import { IListUser } from "interfaces/List-User";
 import { IUser } from "interfaces/User";
 import axiosClient from "./axiosCLient";
@@ -14,6 +15,9 @@ const userAPI = {
         limit: 3,
       },
     });
+  },
+  deleteUser: (userId: string) => {
+    return axiosClient.delete<unknown, IUser>(`/users/${userId}`);
   },
 };
 

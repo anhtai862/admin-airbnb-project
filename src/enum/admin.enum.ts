@@ -8,9 +8,11 @@ export enum CONFIG_URL {
 export enum ACTION_KEY {
   ADDUSER = "AddUserAPI",
   LISTUSER = "ListUser",
+  DELETEUSER = "DeleteUser",
 }
 
 export enum ACTION_NAME {
   ADDUSER = "addUser",
   LISTUSER = "listUser",
+  DELETEUSER = "deleteUser",
 }

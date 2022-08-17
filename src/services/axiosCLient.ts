@@ -15,14 +15,14 @@ interface ErrorResponse {
 }
 
 // setup response interceptor
-// axiosClient.interceptors.response.use(
-//   (response) => {
-//     return response.data.content;
-//   },
-//   (error: AxiosError<ErrorResponse>) => {
-//     return Promise.reject(error.response?.data.content);
-//   }
-// );
+axiosClient.interceptors.response.use(
+  (response) => {
+    return response.data;
+  },
+  (error: AxiosError<ErrorResponse>) => {
+    return Promise.reject(error.response?.data);
+  }
+);
 
 // setup request interceptor
 // axiosClient.interceptors.request.use((config) => {
