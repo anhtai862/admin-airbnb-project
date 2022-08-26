@@ -1,7 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { ACTION_KEY, ACTION_NAME } from "enum/admin.enum";
 import { IDELETE } from "interfaces/Delete-User";
+import { IListUser } from "interfaces/List-User";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import userAPI from "services/user";
+import { AppDispatch } from "store";
+import { getListUser } from "./list-user";
 
 interface DeleteState {
   data: any;

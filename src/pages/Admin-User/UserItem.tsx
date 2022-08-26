@@ -1,6 +1,7 @@
 import { IListUser } from "interfaces/List-User";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { deleteUser } from "slices/delete-user";
 import { getListUser } from "slices/list-user";
 
@@ -11,16 +12,17 @@ type Props = {
 };
 
 const UserItem = (user: Props) => {
+  const props = user;
+
   const { data, isLoading, error } = useSelector(
     (state: RootState) => state.delete_user
   );
   const dispatch = useDispatch<AppDispatch>();
 
-  const handleDelete = (userId: any) => {
-    dispatch(deleteUser(userId));
+  const handleDelete = async (userId: any) => {
+    await dispatch(deleteUser(userId));
+    dispatch(getListUser());
   };
-
-  const props = user;
 
   return (
     <>
@@ -29,7 +31,6 @@ const UserItem = (user: Props) => {
         <td>{props.user.email}</td>
         <td>{props.user.phone}</td>
         <td>{props.user.address}</td>
-        <td>{props.user.birthday}</td>
 
         <td>
           <button className="bg-green-400 mt-1 px-3 py-2 border shadow-sm rounded-md">

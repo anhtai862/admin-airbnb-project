@@ -1,6 +1,3 @@
-import React, { Component, createRef, useRef, useState } from "react";
-import { IUser } from "interfaces/User";
-import { getListUser } from "slices/list-user";
 type props = {
   searchUser: string;
   setSearchUser(value: string): void;

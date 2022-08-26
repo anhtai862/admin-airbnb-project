@@ -1,6 +1,7 @@
 import { IDELETE } from "interfaces/Delete-User";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { deleteUser } from "slices/delete-user";
 import { getListUser } from "slices/list-user";
 import { AppDispatch, RootState } from "store";
@@ -29,15 +30,15 @@ const UserList = (props: props) => {
 
   return (
     <div className="flex flex-col mt-10  ">
-      <table className="table-fixed  bg-yellow-300 text-center h-96">
+      <table className="table-fixed bg-white   text-center h-96">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Họ Và Tên</th>
+            <th>Họ và Tên</th>
             <th>Email</th>
             <th>Số Điện Thoại</th>
+
             <th>Address</th>
-            <th>Date of Birth</th>
+
             <th></th>
           </tr>
         </thead>
